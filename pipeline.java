@@ -90,7 +90,7 @@ public class PlanSpec {
     public PlanPermissions planPermission() {
         final PlanPermissions planPermission = new PlanPermissions(new PlanIdentifier("BAM", "BAM"))
                 .permissions(new Permissions()
-                        .userPermissions("automate6500", PermissionType.EDIT, PermissionType.VIEW, PermissionType.ADMIN,
+                        .userPermissions("USER_NAME", PermissionType.EDIT, PermissionType.VIEW, PermissionType.ADMIN,
                                 PermissionType.CLONE, PermissionType.BUILD)
                         .loggedInUserPermissions(PermissionType.VIEW).anonymousUserPermissionView());
         return planPermission;
@@ -98,7 +98,7 @@ public class PlanSpec {
 
     public static void main(String... argv) {
         // By default credentials are read from the '.credentials' file.
-        BambooServer bambooServer = new BambooServer("http://178.128.7.18:8085");
+        BambooServer bambooServer = new BambooServer("http://SERVER_URL:8085");
         final PlanSpec planSpec = new PlanSpec();
 
         final Plan plan = planSpec.plan();
